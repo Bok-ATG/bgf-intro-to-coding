@@ -1,0 +1,11 @@
+# Core data science and notebook dependencies
+jupyter
+ipykernel
+numpy
+pandas
+matplotlib
+seaborn
+
+# Common utilities
+requests
+python-dotenv
