@@ -1,0 +1,8 @@
+slack_bolt
+python-dotenv
+watchfiles
+openai
+requests
+pyairtable
+pydantic
+dotenv
