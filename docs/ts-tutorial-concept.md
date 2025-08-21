@@ -1,95 +1,105 @@
-Here’s a clean plan + two starter cells you can drop into a Jupyter/Colab notebook.
+# Taylor Swift Python Tutorial Series
 
-On-ramp plan (no code yet)
+This tutorial series introduces Python programming concepts using Taylor Swift-themed examples and data. The 12 notebooks progress from basic concepts to advanced programming techniques, culminating in a comprehensive capstone project.
 
-Notebook basics — cells, running code, print, comments.
+## Tutorial Structure
 
-Variables & core data types — int, float, str, bool, NoneType; type(); basic casting.
+### 01. Variables & Types (`01-variables-types.ipynb`)
+- Introduction to Python data types: int, float, str, bool, NoneType
+- Variable assignment and naming conventions
+- Type checking with `type()`
+- Basic type casting and conversion
+- F-string formatting for output
+- Taylor Swift examples: artist info, album years, Grammy counts
 
-Collections — lists, tuples, dictionaries, sets; when to use which.
+### 02. Collections (`02-collections.ipynb`)
+- Lists: creating, indexing, and basic operations
+- Dictionaries: key-value pairs and nested structures
+- Tuples and sets introduction
+- Working with Taylor Swift discography data
+- Collection methods and properties
 
-Operators — arithmetic, comparison, logical, membership (in), identity (is).
+### 03. Operators & Control Flow (`03-operators-control-flow.ipynb`)
+- Arithmetic, comparison, and logical operators
+- Membership (`in`) and identity (`is`) operators
+- Conditional statements: if/elif/else
+- Boolean logic and truthiness
+- Music data analysis examples
 
-Control flow — if / elif / else; truthiness; chaining conditions.
+### 04. Loops (`04-loops.ipynb`)
+- For loops with range() and enumerate()
+- Iterating over collections (lists, dictionaries)
+- While loops and loop control (break/continue)
+- Nested loops for complex data processing
+- Taylor Swift catalog iteration examples
 
-Loops — for with range() and enumerate(), iterating dicts, while, break/continue.
+### 05. Functions (`05-functions.ipynb`)
+- Function definition and calling
+- Parameters: positional, keyword, and default values
+- Return values and multiple returns
+- Docstrings and documentation
+- Scope and local vs global variables
+- Music data processing functions
 
-Functions — parameters (positional, keyword, defaults), return values, docstrings, scope.
+### 06. String Skills (`06-string-skills.ipynb`)
+- String slicing and indexing
+- Advanced f-string formatting
+- String methods: split(), join(), replace(), etc.
+- Working with song titles and lyrics
+- Text processing for music data
 
-String skills — slicing, f-strings, common methods, basic regex (optional).
+### 07. List Skills (`07-list-skills.ipynb`)
+- Advanced list methods: append(), extend(), remove(), etc.
+- List slicing and indexing techniques
+- List comprehensions for data transformation
+- Sorting and filtering lists
+- Album and song list management
 
-List skills — methods, slicing, list comprehensions.
+### 08. Dictionary Skills (`08-dictionary-skills.ipynb`)
+- Advanced dictionary operations
+- Nested dictionaries for complex data structures
+- Dictionary methods: get(), keys(), values(), items()
+- Dictionary comprehensions
+- Music metadata management
 
-Dictionaries — nested dicts, .get(), keys/values/items, dict comprehensions.
+### 09. Modules & Packages (`09-modules-packages.ipynb`)
+- Importing from the Python standard library
+- Working with datetime, random, statistics modules
+- Understanding module structure
+- Virtual environments (conceptual introduction)
+- Data analysis with built-in tools
 
-Modules & packages — import, the standard library, virtual environments (conceptual).
+### 10. Files & JSON (`10-files-json.ipynb`)
+- Reading and writing text files
+- Working with CSV data
+- JSON file handling and parsing
+- File paths and directory operations
+- Saving and loading music data
 
-Files & JSON — reading/writing text files; json module.
+### 11. Errors & Exceptions (`11-errors-exceptions.ipynb`)
+- Understanding and reading tracebacks
+- Try/except blocks for error handling
+- Specific exception types
+- Raising custom exceptions
+- Debugging techniques and best practices
 
-Errors & exceptions — reading tracebacks; try/except; raising errors.
+### 12. Playlist Analyzer Capstone (`12-playlist-analyzer-capstone.ipynb`)
+- Complete Taylor Swift Playlist Analyzer system
+- Object-oriented programming with classes
+- Data loading and validation
+- Statistical analysis of music data
+- Intelligent playlist generation algorithms
+- Multi-format export (JSON, CSV, TXT)
+- Interactive exploration interface
+- Production-ready error handling and logging
 
-Mini-project (capstone) — Taylor Swift Playlist Analyzer: load a small album/track dataset; compute stats (song counts, average length), filter tracks, format a setlist.
+## Learning Objectives
 
-(Optional) Classes / dataclasses — modeling Song, Album.
+By completing this tutorial series, learners will:
+- Master Python fundamentals through engaging, real-world examples
+- Understand data structures and their appropriate use cases
+- Learn to process and analyze structured data
+- Develop problem-solving skills with music-themed challenges
+- Build a complete, functional application from scratch
+- Gain experience with Python best practices and coding conventions
 
-Testing mindset — assertions, simple tests.
-
-Cell 1 — Variables & Types (Taylor theme)
-# Taylor Swift — Variables & Types
-
-# Strings (text)
-artist = "Taylor Swift"
-era = "1989 (Taylor’s Version)"
-
-# Integers (whole numbers)
-debut_year = 2006
-grammys_won = 14  # update as needed
-
-# Floats (numbers with decimals)
-avg_track_length_minutes = 3.85
-
-# Booleans (True/False)
-is_on_tour = True
-
-# None (the “no value yet” placeholder)
-surprise_song = None
-
-# Peek at values and their types
-print(artist, "→", type(artist))
-print(debut_year, "→", type(debut_year))
-print(avg_track_length_minutes, "→", type(avg_track_length_minutes))
-print(is_on_tour, "→", type(is_on_tour))
-print(surprise_song, "→", type(surprise_song))
-
-# Combining strings with f-strings (preferred)
-print(f"{artist} re-recorded {era} and averages ~{avg_track_length_minutes} minutes per track.")
-
-# Casting between types (be intentional!)
-year_str = str(debut_year)     # int → str
-tracks_str = "16"
-tracks_int = int(tracks_str)   # str of digits → int
-
-print("Year as string:", year_str, "→", type(year_str))
-print("Tracks as int:", tracks_int, "→", type(tracks_int))
-
-# Tiny practice:
-# 1) Change avg_track_length_minutes to 4.05 and re-run the f-string line above.
-# 2) Make a new variable 'tour_years' as an int and print a sentence about it with an f-string.
-
-Cell 2 — Lists (Arrays) & Dictionaries (Objects)
-# Taylor Swift — Lists & Dictionaries
-
-# A list (array) of songs on an album (order matters, duplicates allowed)
-songs_1989_tv = [
-    "Welcome To New York",
-    "Blank Space",
-    "Style",
-    "Out Of The Woods",
-    "All You Had To Do Was Stay",
-    "Shake It Off",
-    "I Wish You Would",
-    "Bad Blood",
-    "Wildest Dreams",
-    "How You Get The Girl",
-    "This Love",
-    "I Know Places",
